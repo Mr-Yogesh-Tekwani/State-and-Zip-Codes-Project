@@ -86,16 +86,35 @@ class SecondViewController: UIViewController {
     }
 }
 
+extension String {
+    var isNumber: Bool {
+        return self.range(
+            of: "^[0-9]*$", // 1
+            options: .regularExpression) != nil
+    }
+}
+
 extension SecondViewController: UITableViewDelegate{
     @objc  func okPressed() {
         guard let x = newZipText.text , x != "" else {
             return
         }
+        var check = true
         
+        if x.isNumber && x.count == 5 {
+            check = false
           if let data = data {
-              
               delegate?.changeZipCode(oldZipCode: data, newZipCode: x)
           }
+        }
+        else{
+            let alertController = UIAlertController(title: "Alert", message: "Enter 5 digit numeric zip code !", preferredStyle: .alert)
+               let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
+                  // handle OK button tap
+               }
+               alertController.addAction(okAction)
+               present(alertController, animated: true, completion: nil)
+        }
         //let nav = SecondViewController()
         self.navigationController?.popViewController(animated: true)
       }

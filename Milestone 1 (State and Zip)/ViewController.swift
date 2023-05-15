@@ -27,9 +27,22 @@ class ViewController: UIViewController {
     var data: [stateZip] = []
     
     
+    let mainStack1 : UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .vertical
+        stack.alignment = .fill
+        stack.distribution = .fill
+        return stack
+    }()
+    
+    let label1 : UILabel = {
+        let label = UILabel()
+        return label
+    }()
+    
     let tableview: UITableView = {
         let tv = UITableView(frame: .zero)
-        tv.translatesAutoresizingMaskIntoConstraints = false
+        //tv.translatesAutoresizingMaskIntoConstraints = false
         return tv
     }()
     
@@ -39,7 +52,7 @@ class ViewController: UIViewController {
         
         super.viewDidLoad()
         
-        self.view.addSubview(tableview)
+        
         tableview.register(CustomTableViewCell.self, forCellReuseIdentifier: CustomTableViewCell.identifier)
         
         tableview.delegate = self
@@ -56,15 +69,31 @@ class ViewController: UIViewController {
              //   print(data)
             }
         }
+        
+        label1.text = "States"
+        //label1.textAlignment = .center
+        label1.font = UIFont(name: "Times New Roman", size: 30)
+        label1.textColor = .white
+        tableview.delegate = self
+        tableview.dataSource = self
+        tableview.reloadData()
+        
+        mainStack1.addArrangedSubview(label1)
+        mainStack1.addArrangedSubview(tableview)
+        self.view.addSubview(mainStack1)
+        //print(dataDict)
+        
+        mainStack1.translatesAutoresizingMaskIntoConstraints = false
+        
         tableview.reloadData()
         
         let safeArea = self.view.safeAreaLayoutGuide
         
         NSLayoutConstraint.activate(
-            [tableview.topAnchor.constraint(equalTo: safeArea.topAnchor),
-             tableview.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
-             tableview.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
-             tableview.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor)])
+            [mainStack1.topAnchor.constraint(equalTo: safeArea.topAnchor),
+             mainStack1.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
+             mainStack1.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
+             mainStack1.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor)])
     }
 }
 

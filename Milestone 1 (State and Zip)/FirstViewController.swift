@@ -7,8 +7,6 @@
 
 import UIKit
 
-
-
 protocol FirstViewControllerDelegate {
     func updateZipCode(stateName: String, oldZipCode: String, newZipCode: String)
 }

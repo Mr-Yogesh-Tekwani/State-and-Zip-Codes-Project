@@ -58,7 +58,7 @@ class ViewController: UIViewController {
         tableview.delegate = self
         tableview.dataSource = self
       
-        let path = Bundle.main.path(forResource: "statedictionary", ofType: "plist")
+      let path = Bundle.main.path(forResource: "statedictionary", ofType: "plist")
       let dict = NSDictionary(contentsOfFile: path!)
 
         for (key, value) in dict! {

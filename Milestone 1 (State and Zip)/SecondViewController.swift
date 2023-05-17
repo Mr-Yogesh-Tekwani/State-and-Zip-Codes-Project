@@ -105,12 +105,53 @@ extension SecondViewController: UITableViewDelegate{
             check = false
           if let data = data {
               delegate?.changeZipCode(oldZipCode: data, newZipCode: x)
+            
+            guard let fileUrl = Bundle.main.url(forResource: "statedictionary", withExtension: "plist") else { return }
+            guard var dictdata = NSMutableDictionary(contentsOf: fileUrl) else { return }
+
+            dictdata.setValue( x, forKey: data)
+            print(x)
+            print(data)
+
+            if dictdata.write(to: fileUrl, atomically: true) {
+                print("Data updated successfully")
+            } else {
+                print("Failed to update data")
+            }
+            
+            let dic:[stateZip] = ViewController().data
+
+
+                    if let infoPlistPath = Bundle.main.url(forResource: "statedictionary", withExtension: "plist") {
+
+                        do  {
+
+                            let data = try PropertyListSerialization.data(fromPropertyList: dic, format: PropertyListSerialization.PropertyListFormat.binary, options: 0)
+
+                            do {
+                                print("Try Data Updating")
+                                try data.write(to: infoPlistPath)
+
+                            }catch (let err){
+                                print("Error at 137")
+                                print(err.localizedDescription)
+
+                            }
+
+                        }catch (let err){
+                            print("Error at 143")
+                            print(err.localizedDescription)
+
+                        }
+                        
+                    }
+            
+
           }
         }
         else{
             let alertController = UIAlertController(title: "Alert", message: "Enter 5 digit numeric zip code !", preferredStyle: .alert)
                let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
-                  // handle OK button tap
                }
                alertController.addAction(okAction)
                present(alertController, animated: true, completion: nil)

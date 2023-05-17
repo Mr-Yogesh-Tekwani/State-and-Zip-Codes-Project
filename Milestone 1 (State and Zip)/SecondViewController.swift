@@ -118,6 +118,9 @@ extension SecondViewController: UITableViewDelegate{
             } else {
                 print("Failed to update data")
             }
+            //splitViewController?.popoverPresentationController
+            
+            // self.navigationController?.popViewController(animated: true)
             
             let dic:[stateZip] = ViewController().data
 
@@ -157,6 +160,7 @@ extension SecondViewController: UITableViewDelegate{
                present(alertController, animated: true, completion: nil)
         }
         //let nav = SecondViewController()
-        self.navigationController?.popViewController(animated: true)
+        //self.navigationController?.popViewController(animated: true)
+        
       }
 }

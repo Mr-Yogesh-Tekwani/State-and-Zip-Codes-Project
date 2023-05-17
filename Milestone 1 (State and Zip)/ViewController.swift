@@ -21,9 +21,6 @@ struct stateZip {
 
 class ViewController: UIViewController {
     
-//    var states: String = ""
-//    var zip: String = ""
-    
     var data: [stateZip] = []
     
     
@@ -42,7 +39,6 @@ class ViewController: UIViewController {
     
     let tableview: UITableView = {
         let tv = UITableView(frame: .zero)
-        //tv.translatesAutoresizingMaskIntoConstraints = false
         return tv
     }()
     
@@ -104,7 +100,10 @@ extension ViewController: UITableViewDelegate {
         let fvc = FirstViewController()
         fvc.data = data[indexPath.row]
         fvc.delegate = self
-        self.navigationController?.pushViewController(fvc, animated: true)
+        splitViewController?.showDetailViewController(fvc, sender: self)
+        
+        // self.navigationController?.pushViewController(svc, animated: true)
+        
     }
 }
 

@@ -17,6 +17,7 @@
 		C6C53FCA2A10818100765F8C /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C53FC92A10818100765F8C /* FirstViewController.swift */; };
 		C6C53FCC2A1081EA00765F8C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C53FCB2A1081EA00765F8C /* SecondViewController.swift */; };
 		C6C53FF22A12CE1000765F8C /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C53FF12A12CE1000765F8C /* SplitViewController.swift */; };
+		C6C5403E2A1544C000765F8C /* Combined.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C5403D2A1544C000765F8C /* Combined.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		C6C53FC92A10818100765F8C /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		C6C53FCB2A1081EA00765F8C /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		C6C53FF12A12CE1000765F8C /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
+		C6C5403D2A1544C000765F8C /* Combined.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Combined.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				C6C53FC92A10818100765F8C /* FirstViewController.swift */,
 				C6C53FCB2A1081EA00765F8C /* SecondViewController.swift */,
 				C6C53FF12A12CE1000765F8C /* SplitViewController.swift */,
+				C6C5403D2A1544C000765F8C /* Combined.swift */,
 			);
 			path = "Milestone 1 (State and Zip)";
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 			files = (
 				C6C53FCC2A1081EA00765F8C /* SecondViewController.swift in Sources */,
 				C6C53FF22A12CE1000765F8C /* SplitViewController.swift in Sources */,
+				C6C5403E2A1544C000765F8C /* Combined.swift in Sources */,
 				C6C53FCA2A10818100765F8C /* FirstViewController.swift in Sources */,
 				C6C53FB62A107FE900765F8C /* ViewController.swift in Sources */,
 				C6C53FB22A107FE900765F8C /* AppDelegate.swift in Sources */,

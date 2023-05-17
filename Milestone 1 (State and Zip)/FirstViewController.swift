@@ -52,7 +52,8 @@ extension FirstViewController: UITableViewDelegate {
         svc.data = data?.zipCode[indexPath.row]
        // print(svc.data)
         svc.delegate = self
-        self.navigationController?.pushViewController(svc, animated: true)
+        splitViewController?.showDetailViewController(svc, sender: self)
+        // self.navigationController?.pushViewController(svc, animated: true)
     }
     
 }
